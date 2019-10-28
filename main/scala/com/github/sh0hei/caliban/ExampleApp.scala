@@ -14,6 +14,13 @@ import zio.interop.catz._
 import zio.stream.ZStream
 import zio.{ RIO, URIO, ZEnv, ZIO }
 
-object ExampleApp {
+object ExampleApp extends CatsApp with GenericSchema[Console with Clock] {
 
+  case class Queries()
+  case class Mutations()
+  case class Subscriptions()
+
+  type ExampleTask[A] = RIO[Console with A]
+
+  override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, Int] = ???
 }
