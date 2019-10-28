@@ -27,7 +27,7 @@ class ExampleService(characters: Ref[List[Character]], subscribers: Ref[List[Que
         })
       }
 
-  def deleteEvents: ZStream[Any, Nothing, String] =
+  def deletedEvents(): ZStream[Any, Nothing, String] =
     ZStream.unwrap {
       for {
         queue <- Queue.unbounded[String]
