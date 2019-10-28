@@ -1,5 +1,6 @@
 package scala.com.github.sh0hei.caliban
 
+import ExampleData._
 import zio.stream.ZStream
 import zio.{Queue, Ref, UIO}
 
